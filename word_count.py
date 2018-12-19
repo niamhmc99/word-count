@@ -1,8 +1,9 @@
-import string
+import string, re
 from collections import Counter
 
 
 def word_count(s):
+    
    	# remove punctuation
 	s = s.lower()
 	for char in string.punctuation:
@@ -24,13 +25,11 @@ def word_count(s):
 			result[word] = key
 	
 	return result
-    
-    
-    
-    
-    
-    
-    
+
+    #reg expression way
+    #return dict(Counter(
+    #       re.sub(r'[^a-zA-Z0-9 ]', '', self.phrase.lower()).split()
+    #   ))   
     
     
     #return Counter(phrase.translate(None, string.punctuation).lower().split())
